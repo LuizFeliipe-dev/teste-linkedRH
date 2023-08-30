@@ -7,7 +7,6 @@ import { ButtonCreateDictionaryComponent } from './components/button-create-dict
 import { CreateDictionaryComponent } from './modals/create-dictionary/create-dictionary.component';
 import { EditDictionaryComponent } from './modals/edit-dictionary/edit-dictionary.component';
 import { DeleteDictionaryComponent } from './modals/delete-dictionary/delete-dictionary.component';
-import { NbCardModule, NbDialogModule, NbDialogService } from '@nebular/theme';
 
 const dictionariesRoutes: Route[] = [
   {
@@ -28,9 +27,7 @@ const dictionariesRoutes: Route[] = [
   imports: [
     CommonModule,
     RouterModule.forChild(dictionariesRoutes),
-    NbCardModule,
-    NbDialogModule.forChild(),
   ],
-  providers: [NbDialogService],
+  providers: [],
 })
 export class DictionariesModule {}

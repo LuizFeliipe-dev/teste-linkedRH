@@ -1,27 +1,20 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { NbDialogService } from '@nebular/theme';
-import { CreateDictionaryComponent } from '../../modals/create-dictionary/create-dictionary.component';
+import {Component, EventEmitter, Output, TemplateRef} from '@angular/core';
+import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 
 @Component({
   selector: 'app-button-create-dictionary',
   templateUrl: './button-create-dictionary.component.html',
   styleUrls: ['./button-create-dictionary.component.scss'],
-  providers: [NbDialogService]
+  providers: []
 })
-export class ButtonCreateDictionaryComponent implements OnInit {
-  @Output() onRefresh = new EventEmitter<void>();
+export class ButtonCreateDictionaryComponent {
+  @Output() refresh = new EventEmitter<void>();
 
-  constructor(private dialogService: NbDialogService) {}
+  modalRef?: BsModalRef;
+  constructor(private modalService: BsModalService) {}
 
-  ngOnInit(): void {}
 
-  openModal() {
-    this.dialogService
-      .open(CreateDictionaryComponent)
-      .onClose.subscribe((refresh) => {
-        if (refresh) {
-          this.onRefresh.emit();
-        }
-      });
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 }

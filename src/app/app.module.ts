@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
-import { NbDialogModule } from '@nebular/theme';
+import {ModalModule} from "ngx-bootstrap/modal";
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,7 +12,7 @@ import { NbDialogModule } from '@nebular/theme';
     BrowserModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     HttpClientModule,
-    NbDialogModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
