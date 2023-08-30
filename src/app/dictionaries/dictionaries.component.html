@@ -1,10 +1,12 @@
 <div class="header-content">
-   <img src="../../assets/images/header.png" />
+  <img src="../../assets/images/header.png" alt=""/>
 </div>
-    <div class="body-content">
-        <div class="header-body">
-            <span>Dicionário</span>
-            <app-button-create-dictionary></app-button-create-dictionary>
-        </div>
-        <app-dictionaries-table [dictionaries]="dictionaries$ | async"></app-dictionaries-table>
-    </div>
+<div class="body-content">
+  <div class="header-body">
+    <span>Dicionário</span>
+    <app-button-create-dictionary></app-button-create-dictionary>
+  </div>
+  <app-dictionaries-table
+    [dictionaries]="dictionaries$ | async"
+  ></app-dictionaries-table>
+</div>

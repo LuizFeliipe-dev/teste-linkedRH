@@ -10,6 +10,18 @@ export class DictionaryTextsService {
   constructor(private httpService: HttpClient) { }
 
   list(): Observable<DictionaryModel[]>{
-    return this.httpService.get(`${this.url}/dictionaries`)
+    return this.httpService.get<DictionaryModel[]>(`${this.url}/dictionaryTexts`)
+  }
+
+  post(payload: DictionaryModel): Observable<DictionaryModel>{
+    return this.httpService.post<DictionaryModel>(`${this.url}/dictionaryTexts`, payload)
+  }
+
+  put(payload: DictionaryModel): Observable<DictionaryModel>{
+    return this.httpService.put<DictionaryModel>(`${this.url}/dictionaryTexts`, payload)
+  }
+
+  delete(): Observable<void> {
+    return this.httpService.delete<void>(`${this.url}/dictionaryTexts`)
   }
 }

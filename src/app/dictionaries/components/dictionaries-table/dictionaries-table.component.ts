@@ -13,6 +13,5 @@ export class DictionariesTableComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    console.log(this.dictionaries)
   }
 }

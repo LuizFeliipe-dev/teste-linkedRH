@@ -1,4 +1,9 @@
+@import "node_modules/material-icons/iconfont/material-icons.css";
+
 .button-create-dictionary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px 16px;
   border: 1px solid #253c89;
   outline: none;

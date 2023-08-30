@@ -1,13 +1,12 @@
 import { Route } from '@angular/router';
-import {AppComponent} from "./app.component";
 
 export const appRoutes: Route[] = [
     {
         path: '',
-        component: AppComponent
+        loadChildren: () => import('./dictionaries/dictionaries.module').then((m) => m.DictionariesModule)
     },
     {
-        path: 'dictionaries',
-        loadChildren: () => import('./dictionaries/dictionaries.module').then((m) => m.DictionariesModule)
+        path: 'texts/:id',
+        loadChildren: () => import('./dictionary-texts/dictionary-texts.module').then((m) => m.DictionaryTextsModule)
     }
 ];

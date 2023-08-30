@@ -1,5 +1,22 @@
 {
   "dictionaries": [
+    {
+      "id": 1,
+      "name": "Dicionário",
+      "buttonColor": "#ff0000",
+      "buttonFontColor": "#ffffff",
+      "titleColor": "#ff0000",
+      "iconColor": "#ff0000"
+    }
+  ],
 
+  "dictionaryTexts": [
+    {
+      "id": 1,
+      "dictionaryId": 1,
+      "text": "Pais",
+      "definition":   "Um pais é um local onde vivem pessoas",
+      "extraDefinition": " Um país é um local onde vivem pessoas e uns animal"
+    }
   ]
 }
