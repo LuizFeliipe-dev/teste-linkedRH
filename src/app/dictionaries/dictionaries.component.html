@@ -1,12 +1,10 @@
-<ng-container *ngIf="{ dictionaries: dictionaries$ | async } as asyncData">
-    <div class="header-content">
-        <img src="../../assets/images/header.png"
-    </div>
+<div class="header-content">
+   <img src="../../assets/images/header.png" />
+</div>
     <div class="body-content">
         <div class="header-body">
             <span>Dicionário</span>
-            <button class=""></button>
+            <app-button-create-dictionary></app-button-create-dictionary>
         </div>
-        <app-dictionaries-table [dictionaries]="asyncData.dictionaries"></app-dictionaries-table>
+        <app-dictionaries-table [dictionaries]="dictionaries$ | async"></app-dictionaries-table>
     </div>
-</ng-container>

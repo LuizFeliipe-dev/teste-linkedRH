@@ -10,7 +10,7 @@ import {DictionaryModel} from "../../models/dictionary.model";
   providers: [DictionariesService]
 })
 export class DictionariesComponent implements OnInit{
-  dictionaries$: Observable<DictionaryModel[]>
+  dictionaries$: Observable<DictionaryModel[] | null>
 
   constructor(private dictionariesService: DictionariesService) {
   }
@@ -20,6 +20,8 @@ export class DictionariesComponent implements OnInit{
   }
 
   loadDictionaries(){
-    this.dictionaries$ = this.dictionariesService.list()
+    this.dictionariesService.list().subscribe((data) => {
+      console.log('a', data)
+    })
   }
 }

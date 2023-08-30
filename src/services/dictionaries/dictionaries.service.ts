@@ -10,6 +10,6 @@ export class DictionariesService {
   constructor(private httpService: HttpClient) { }
 
   list(): Observable<DictionaryModel[]>{
-    return this.httpService.get(`${this.url}/dictionaries`)
+    return this.httpService.get<DictionaryModel[]>(`${this.url}/dictionaries`)
   }
 }
