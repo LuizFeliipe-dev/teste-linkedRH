@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('my-org', () => {
+describe('project-linked-rh', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
@@ -8,6 +8,6 @@ describe('my-org', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome my-org');
+    getGreeting().contains('Welcome project-linked-rh');
   });
 });

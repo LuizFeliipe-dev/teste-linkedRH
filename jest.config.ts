@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'my-org',
+  displayName: 'project-linked-rh',
   preset: './jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: './coverage/my-org',
+  coverageDirectory: './coverage/project-linked-rh',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
