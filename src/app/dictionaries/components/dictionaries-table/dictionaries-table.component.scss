@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+  margin: 1rem 0;
+
+  tr, th, td {
+    padding: .5em;
+  }
+
+  tr {
+
+    th {
+      background-color: #265a84;
+      color: #fff;
+      text-align: center;
+    }
+
+    td {
+      background-color: #EEFFEE;
+      text-align: center;
+      border-collapse: collapse;
+    }
+  }
+}

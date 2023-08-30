@@ -11,17 +11,17 @@ import { CreateDictionaryComponent } from '../../modals/create-dictionary/create
 export class ButtonCreateDictionaryComponent implements OnInit {
   @Output() onRefresh = new EventEmitter<void>();
 
-  // constructor(private dialogService: NbDialogService) {}
+  constructor(private dialogService: NbDialogService) {}
 
   ngOnInit(): void {}
 
   openModal() {
-    // this.dialogService
-    //   .open(CreateDictionaryComponent)
-    //   .onClose.subscribe((refresh) => {
-    //     if (refresh) {
-    //       this.onRefresh.emit();
-    //     }
-    //   });
+    this.dialogService
+      .open(CreateDictionaryComponent)
+      .onClose.subscribe((refresh) => {
+        if (refresh) {
+          this.onRefresh.emit();
+        }
+      });
   }
 }
