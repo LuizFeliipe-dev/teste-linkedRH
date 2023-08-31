@@ -4,13 +4,13 @@ import {BsModalRef} from "ngx-bootstrap/modal";
 import {DictionariesService} from "../../../../services/dictionaries/dictionaries.service";
 
 @Component({
-  selector: 'app-delete-dictionary',
-  templateUrl: './delete-dictionary.component.html',
-  styleUrls: ['./delete-dictionary.component.scss'],
+  selector: 'app-edit-dictionary',
+  templateUrl: './edit-dictionary.component.html',
+  styleUrls: ['./edit-dictionary.component.scss'],
   providers: [DictionariesService]
 })
-export class DeleteDictionaryComponent implements OnInit {
-  rowData: DictionaryModel;
+export class EditDictionaryComponent implements OnInit {
+  rowData: DictionaryModel
 
   constructor(
       public modalRef: BsModalRef,
@@ -19,8 +19,8 @@ export class DeleteDictionaryComponent implements OnInit {
 
   ngOnInit() {}
 
-  onDelete() {
-    this.dictionaryService.delete(this.rowData.id).subscribe(() => {
+  onUpdate(){
+    this.dictionaryService.put(this.rowData.id, this.rowData).subscribe(() => {
       this.modalRef.hide()
     })
   }

@@ -5,9 +5,10 @@ import { DictionariesTableComponent } from './components/dictionaries-table/dict
 import { Route, RouterModule } from '@angular/router';
 import { ButtonCreateDictionaryComponent } from './components/button-create-dictionary/button-create-dictionary.component';
 import { CreateDictionaryComponent } from './modals/create-dictionary/create-dictionary.component';
-import { EditDictionaryComponent } from '../edit-dictionary/edit-dictionary.component';
 import { DeleteDictionaryComponent } from './modals/delete-dictionary/delete-dictionary.component';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from '@angular/forms';
+import { EditDictionaryTextsModule } from '../edit-dictionary-texts/edit-dictionary-texts.module';
+import { EditDictionaryComponent } from './modals/edit-dictionary/edit-dictionary.component';
 
 const dictionariesRoutes: Route[] = [
   {
@@ -22,13 +23,14 @@ const dictionariesRoutes: Route[] = [
     DictionariesTableComponent,
     ButtonCreateDictionaryComponent,
     CreateDictionaryComponent,
-    EditDictionaryComponent,
     DeleteDictionaryComponent,
+    EditDictionaryComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(dictionariesRoutes),
-      FormsModule
+    FormsModule,
+    EditDictionaryTextsModule,
   ],
   providers: [],
 })

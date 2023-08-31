@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DictionaryTextsComponent } from './dictionary-texts.component';
+import { TextsComponent } from './texts.component';
 
 describe('DictionaryTextsComponent', () => {
-  let component: DictionaryTextsComponent;
-  let fixture: ComponentFixture<DictionaryTextsComponent>;
+  let component: TextsComponent;
+  let fixture: ComponentFixture<TextsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DictionaryTextsComponent],
+      declarations: [TextsComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DictionaryTextsComponent);
+    fixture = TestBed.createComponent(TextsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

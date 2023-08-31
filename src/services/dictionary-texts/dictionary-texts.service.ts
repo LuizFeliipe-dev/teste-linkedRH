@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {DictionaryModel} from "../../models/dictionary.model";
+import {DictionaryTextModel} from "../../models/dictionaryText.mode";
 
 @Injectable()
 export class DictionaryTextsService {
@@ -9,19 +9,23 @@ export class DictionaryTextsService {
 
   constructor(private httpService: HttpClient) { }
 
-  list(): Observable<DictionaryModel[]>{
-    return this.httpService.get<DictionaryModel[]>(`${this.url}/dictionaryTexts`)
+  list(): Observable<DictionaryTextModel[]>{
+    return this.httpService.get<DictionaryTextModel[]>(`${this.url}/dictionaryTexts`)
   }
 
-  post(payload: DictionaryModel): Observable<DictionaryModel>{
-    return this.httpService.post<DictionaryModel>(`${this.url}/dictionaryTexts`, payload)
+  post(payload: DictionaryTextModel): Observable<DictionaryTextModel>{
+    return this.httpService.post<DictionaryTextModel>(`${this.url}/dictionaryTexts`, payload)
   }
 
-  put(payload: DictionaryModel): Observable<DictionaryModel>{
-    return this.httpService.put<DictionaryModel>(`${this.url}/dictionaryTexts`, payload)
+  put(id: number | string, payload: DictionaryTextModel): Observable<DictionaryTextModel>{
+    return this.httpService.put<DictionaryTextModel>(`${this.url}/dictionaryTexts/${id}`, payload)
   }
 
-  delete(): Observable<void> {
-    return this.httpService.delete<void>(`${this.url}/dictionaryTexts`)
+  delete(id: number | string): Observable<void> {
+    return this.httpService.delete<void>(`${this.url}/dictionaryTexts/${id}`)
+  }
+
+  find(id: number | string): Observable<DictionaryTextModel[]>{
+    return this.httpService.get<DictionaryTextModel[]>(`${this.url}/dictionaryTexts/${id}`)
   }
 }

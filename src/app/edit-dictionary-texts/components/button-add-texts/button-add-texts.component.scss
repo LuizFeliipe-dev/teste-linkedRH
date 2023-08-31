@@ -1,0 +1,38 @@
+@import "node_modules/material-icons/iconfont/material-icons.css";
+
+.button-aadd-texts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1px solid #253c89;
+  outline: none;
+  border-radius: 8px;
+  position: relative;
+  color: #253c89;
+  overflow: hidden;
+  transition: color ease 500ms;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.button-aadd-texts:hover {
+  color: #fff;
+}
+
+.button-aadd-texts::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateX(-100%);
+  transition: transform ease 500ms;
+  background: #253c89;
+}
+
+.button-aadd-texts:hover::before {
+  transform: translateX(0);
+}

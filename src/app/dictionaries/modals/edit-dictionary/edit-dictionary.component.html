@@ -1,0 +1,44 @@
+<div class="modal-header">
+    <span class="material-icons">pen</span>
+    Dicionário
+</div>
+<div class="modal-body">
+    <div class="col">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Título</label>
+                <input type="text" class="form-control"  [(ngModel)]="rowData.name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="checkbox" [(ngModel)]="rowData.colorButton"/>
+                Cor de fundo do botão
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="checkbox" />
+                Cor da fonte do botão
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="checkbox" />
+                Cor da fonte para títulos
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="checkbox" />
+                Cor do ícone
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-default mr-2" (click)="modalRef.hide()">Cancelar</button>
+        <button class="btn btn-primary" (click)="onUpdate()">Salvar</button>
+    </div>
+</div>

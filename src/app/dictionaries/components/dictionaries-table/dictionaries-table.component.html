@@ -2,7 +2,7 @@
   <tr>
     <th>Nome</th>
     <th>Visualizar</th>
-    <th></th>
+    <th>Editar Palavras</th>
     <th>Editar</th>
     <th>Excluir</th>
   </tr>
@@ -11,7 +11,7 @@
     <td class="column-button">
       <span class="material-icons is-button" (click)="goToVisualizationDictionary(dictionary)">search</span>
     </td>
-    <td><span class="is-button">abc</span></td>
+    <td><span class="is-button" (click)="goToEditTexts(dictionary)">abc</span></td>
     <td>
       <span class="material-icons is-button" (click)="openEditModal(dictionary)">settings</span>
     </td>

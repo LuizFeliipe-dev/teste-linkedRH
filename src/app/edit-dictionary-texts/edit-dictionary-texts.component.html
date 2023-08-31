@@ -1,0 +1,12 @@
+<div class="header-content">
+  <img src="../../assets/images/header.png" alt="" />
+</div>
+<div class="body-content">
+  <div class="header-body">
+    <span>Palavra</span>
+    <app-button-add-texts></app-button-add-texts>
+  </div>
+  <app-edit-dictionary-texts-table
+    [texts]="texts$ | async"
+  ></app-edit-dictionary-texts-table>
+</div>

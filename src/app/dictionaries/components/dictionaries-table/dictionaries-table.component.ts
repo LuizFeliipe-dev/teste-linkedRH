@@ -2,8 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {DictionaryModel} from "../../../../models/dictionary.model";
 import {BsModalService} from "ngx-bootstrap/modal";
 import {DeleteDictionaryComponent} from "../../modals/delete-dictionary/delete-dictionary.component";
-import {EditDictionaryComponent} from "../../../edit-dictionary/edit-dictionary.component";
 import {Router} from "@angular/router";
+import {EditDictionaryComponent} from "../../modals/edit-dictionary/edit-dictionary.component";
 
 @Component({
   selector: 'app-dictionaries-table',
@@ -20,11 +20,19 @@ export class DictionariesTableComponent implements OnInit{
   }
 
   goToVisualizationDictionary(event: DictionaryModel){
-    this.router.navigate([`/texts/${event.id}`])
+    this.router.navigate([`texts/${event.id}`])
   }
 
   openEditModal(event: DictionaryModel){
-    this.router.navigate([`/${event.id}`])
+    const initalState = {
+      rowData: event
+    }
+
+    this.modalService.show(EditDictionaryComponent, { initialState: initalState })
+  }
+
+  goToEditTexts(event: DictionaryModel){
+    this.router.navigate([`dictionary-texts/${event.id}`])
   }
 
   openDeleteModal(event: DictionaryModel){

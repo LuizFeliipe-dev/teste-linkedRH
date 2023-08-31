@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DictionaryTextsComponent } from './dictionary-texts.component';
+import { TextsComponent } from './texts.component';
 import { Route, RouterModule } from '@angular/router';
 import { DictionaryTextsTableComponent } from './components/dictionary-texts-table/dictionary-texts-table.component';
 
 const dictionaryTextsRoutes: Route[] = [
   {
-    path: '',
-    component: DictionaryTextsComponent,
+    path: 'text/:id',
+    component: TextsComponent,
   },
 ];
 
 @NgModule({
   declarations: [
-    DictionaryTextsComponent,
+    TextsComponent,
     DictionaryTextsTableComponent,
     DictionaryTextsTableComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(dictionaryTextsRoutes)],
 })
-export class DictionaryTextsModule {}
+export class TextsModule {}

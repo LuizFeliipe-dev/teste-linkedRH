@@ -9,17 +9,17 @@ export const appRoutes: Route[] = [
       ),
   },
   {
-    path: ':id',
+    path: 'dictionary-texts/:id',
     loadChildren: () =>
-      import('./edit-dictionary/edit-dictionary.module').then(
-        (m) => m.EditDictionaryModule
+      import('./edit-dictionary-texts/edit-dictionary-texts.module').then(
+        (m) => m.EditDictionaryTextsModule
       ),
   },
   {
     path: 'texts/:id',
     loadChildren: () =>
-      import('./dictionary-texts/dictionary-texts.module').then(
-        (m) => m.DictionaryTextsModule
+      import('./texts/texts.module').then(
+        (m) => m.TextsModule
       ),
   },
 ];
