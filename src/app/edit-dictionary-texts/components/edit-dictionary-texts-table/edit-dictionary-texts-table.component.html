@@ -4,7 +4,7 @@
     <th>Editar</th>
     <th>Excluir</th>
   </tr>
-  <tr *ngFor="let text of texts">
+  <tr *ngFor="let text of filteredTexts">
     <td style="width: 50em">{{ text.text }}</td>
     <td>
       <span class="material-icons is-button" (click)="openEditModal(text)">settings</span>

@@ -8,6 +8,7 @@ import { AddTextsComponent } from './modals/add-texts/add-texts.component';
 import { EditTextsComponent } from './modals/edit-texts/edit-texts.component';
 import { DeleteTextsComponent } from './modals/delete-texts/delete-texts.component';
 import { FormsModule } from '@angular/forms';
+import {PaginatorComponent} from "../../components/paginator/paginator.component";
 
 const EditDictionaryRoutes: Route[] = [
   { path: 'dictionary-texts/:id', component: EditDictionaryTextsComponent },
@@ -22,11 +23,12 @@ const EditDictionaryRoutes: Route[] = [
     EditTextsComponent,
     DeleteTextsComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(EditDictionaryRoutes),
-    FormsModule,
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(EditDictionaryRoutes),
+        FormsModule,
+        PaginatorComponent,
+    ],
   exports: [ButtonAddTextsComponent, EditDictionaryTextsTableComponent],
 })
 export class EditDictionaryTextsModule {}

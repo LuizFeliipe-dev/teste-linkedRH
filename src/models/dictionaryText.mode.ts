@@ -3,4 +3,5 @@ export class DictionaryTextModel{
     text: string;
     definition: string;
     extraDefinition: string;
+    dictionaryId: string;
 }

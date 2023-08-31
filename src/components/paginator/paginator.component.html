@@ -1,0 +1,5 @@
+<div class="btn-group" role="group">
+    <button class="btn btn-outline-primary button-font" *ngFor="let letter of letters" (click)="sendLetter.emit(letter.letter)">
+        {{ letter.letter }}
+    </button>
+</div>

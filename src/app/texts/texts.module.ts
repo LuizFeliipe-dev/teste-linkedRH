@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TextsComponent } from './texts.component';
 import { Route, RouterModule } from '@angular/router';
-import { DictionaryTextsTableComponent } from './components/dictionary-texts-table/dictionary-texts-table.component';
+import { PaginatorComponent } from '../../components/paginator/paginator.component';
+import { ViewTextComponent } from './modals/view-text/view-text.component';
 
 const dictionaryTextsRoutes: Route[] = [
   {
@@ -14,9 +15,12 @@ const dictionaryTextsRoutes: Route[] = [
 @NgModule({
   declarations: [
     TextsComponent,
-    DictionaryTextsTableComponent,
-    DictionaryTextsTableComponent,
+    ViewTextComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(dictionaryTextsRoutes)],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(dictionaryTextsRoutes),
+    PaginatorComponent,
+  ],
 })
 export class TextsModule {}

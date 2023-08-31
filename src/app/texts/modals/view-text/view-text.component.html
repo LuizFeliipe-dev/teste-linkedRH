@@ -1,0 +1,19 @@
+<div class="modal-header">I.A.S</div>
+<div class="modal-body">
+  <div class="text-body-content">
+    <span class="text-title">{{ text.text }}</span>
+    <span>{{ text.extraDefinition }}</span>
+  </div>
+</div>
+<div class="modal-footer">
+  <div class="d-flex justify-content-center">
+    <button
+      class="btn btn-default mr-2"
+      [style.background-color]="dictionary?.colorButton"
+      [style.color]="dictionary.fontColorButton"
+      (click)="modalRef.hide()"
+    >
+      Cancelar
+    </button>
+  </div>
+</div>

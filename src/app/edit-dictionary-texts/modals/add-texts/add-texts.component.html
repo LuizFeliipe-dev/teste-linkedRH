@@ -1,15 +1,12 @@
 <div class="modal-header">
-  <div class="add-texts-header">
-    <span class="material-icons">add</span>
-    Palavra
-  </div>
+   Adicionar Palavra
 </div>
 <div class="modal-body">
   <div class="col">
     <div class="row">
       <div class="col-md-12">
         <label>Palavra</label>
-        <input type="text" class="form-control" [(ngModel)]="text.text" />
+        <input type="text" class="form-control" [(ngModel)]="text.text" (change)="saveInformation()"/>
       </div>
     </div>
     <div class="row">
@@ -19,6 +16,7 @@
           type="text"
           class="form-control"
           [(ngModel)]="text.definition"
+          (change)="saveInformation()"
         />
       </div>
     </div>
@@ -28,6 +26,7 @@
         <textarea
           class="form-control"
           [(ngModel)]="text.extraDefinition"
+          (change)="saveInformation()"
         ></textarea>
       </div>
     </div>

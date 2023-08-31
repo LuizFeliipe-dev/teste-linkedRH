@@ -1,0 +1,67 @@
+@import 'node_modules/material-icons/iconfont/material-icons.css';
+
+.header-texts {
+  width: 100vw;
+  height: 200px;
+  background: #e90864;
+}
+
+.body-texts {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+
+  .header-body-texts {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #efefef;
+
+    span.title {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .button-content {
+      display: flex;
+      gap: 15px;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .texts-content {
+    width: 85%;
+    margin-top: 15px;
+
+    .texts-container {
+      padding: 10px;
+
+      .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .button-open-text {
+        font-size: 1.1rem;
+        text-decoration: underline !important;
+        cursor: pointer;
+      }
+
+      .definition {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.is-button {
+  cursor: pointer !important;
+}

@@ -1,7 +1,7 @@
 {
   "dictionaries": [
     {
-      "colorButton": "#6946b3",
+      "colorButton": "#bfafe0",
       "fontColorButton": "#ff80ff",
       "colorTitle": "#ff0080",
       "iconColor": "#00ff40",
@@ -9,9 +9,70 @@
       "id": "3b771ba8-ed0b-4ea3-981c-d7d033b6328f"
     },
     {
-      "name": "Teste",
-      "id": "ccafea4c-80b6-4425-9fa2-706c0cf6ba16"
+      "name": "Aaaa",
+      "id": "88da9dd2-01b4-434e-b712-933267d958c6",
+      "colorButton": "#80ffff",
+      "fontColorButton": "#750075"
+    },
+    {
+      "name": "Bbb",
+      "colorButton": "#8080ff",
+      "id": "1e1c463c-d8bd-4d4e-b1aa-b844c839c813"
     }
   ],
-  "dictionaryTexts": []
+  "dictionaryTexts": [
+    {
+      "text": "Aa",
+      "definition": "teste",
+      "extraDefinition": "teste",
+      "id": "e1812f66-103e-4a66-be5b-a25c16e010a3"
+    },
+    {
+      "text": "Aaa",
+      "definition": "teste",
+      "extraDefinition": "teste",
+      "id": "c3484e11-14bd-4703-985a-df7a792582f7"
+    },
+    {
+      "text": "Aaaa",
+      "definition": "Teste",
+      "extraDefinition": "Teste",
+      "id": "b3430577-0a03-43ba-9e36-c011b3ff0d08"
+    },
+    {
+      "text": "Bbbb",
+      "definition": "Teste",
+      "extraDefinition": "Teste",
+      "id": "e2fd75e6-ec9e-4a9c-9d1b-7f0268fdd8f7",
+      "dictionaryId": "3b771ba8-ed0b-4ea3-981c-d7d033b6328f"
+    },
+    {
+      "text": "Aaa",
+      "definition": "Teasdasdasdasda",
+      "extraDefinition": "wertwetwetwetwetwe34534534534534534terwfgedws",
+      "id": "0c0ee441-75f1-41ba-a5cb-84dc3ba69b4a",
+      "dictionaryId": "3b771ba8-ed0b-4ea3-981c-d7d033b6328f"
+    },
+    {
+      "text": "Cccc",
+      "definition": "Testeasdasdawrw34r3w4tergsgosidfghsduoin",
+      "extraDefinition": "OIFNSDIU9OGBNEF890DBHNRW908HBNW9GNW9UBN9WBNW9UBNW9BNW9BNQEW",
+      "id": "4b44dc21-629d-4422-b7c6-372b7cad47ec",
+      "dictionaryId": "3b771ba8-ed0b-4ea3-981c-d7d033b6328f"
+    },
+    {
+      "text": "Dddd",
+      "definition": "0jt9wehg9wehg9whg9ew",
+      "extraDefinition": "308u5324895u29385h29385y29385u29380r9jnf923",
+      "id": "368d22ca-651b-4beb-ad95-baa7822d17e1",
+      "dictionaryId": "3b771ba8-ed0b-4ea3-981c-d7d033b6328f"
+    },
+    {
+      "text": "Eee",
+      "definition": "h923h4293874h23984h",
+      "extraDefinition": "98325H32985H92385H235",
+      "id": "ae67fb17-c1a3-44d8-9c77-cb87d34cdc54",
+      "dictionaryId": "3b771ba8-ed0b-4ea3-981c-d7d033b6328f"
+    }
+  ]
 }

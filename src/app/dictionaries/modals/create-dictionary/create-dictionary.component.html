@@ -1,8 +1,7 @@
 <div class="modal-header">
   <div class="header-create-content">
     <div class="header-create-text">
-      <!--  <span class="material-icons">pen</span> -->
-      Dicionário
+      Adicionar Dicionário
     </div>
     <span class="material-icons" style="cursor: pointer !important" (click)="modalRef.hide()">close</span>
   </div>
@@ -12,30 +11,30 @@
     <div class="row">
       <div class="col-md-12">
         <label>Título</label>
-        <input type="text" class="form-control"  [(ngModel)]="dictionary.name" />
+        <input type="text" class="form-control"  [(ngModel)]="dictionary.name" (change)="saveInformation()" />
       </div>
     </div>
     <div class="row mt-2">
       <div class="col-md-12">
-        <input type="color" class="form-control-color" [(ngModel)]="dictionary.colorButton"/>
+        <input type="color" class="form-control-color" [(ngModel)]="dictionary.colorButton" (change)="saveInformation()"/>
         Cor de fundo do botão
       </div>
     </div>
     <div class="row mt-2">
       <div class="col-md-12">
-        <input type="color" class="form-control-color" [(ngModel)]="dictionary.fontColorButton"/>
+        <input type="color" class="form-control-color" [(ngModel)]="dictionary.fontColorButton" (change)="saveInformation()"/>
         Cor da fonte do botão
       </div>
     </div>
     <div class="row mt-2">
       <div class="col-md-12">
-        <input type="color" class="form-control-color" [(ngModel)]="dictionary.colorTitle"/>
+        <input type="color" class="form-control-color" [(ngModel)]="dictionary.colorTitle" (change)="saveInformation()"/>
         Cor da fonte para títulos
       </div>
     </div>
     <div class="row mt-2">
       <div class="col-md-12">
-        <input type="color" class="form-control-color" [(ngModel)]="dictionary.iconColor"/>
+        <input type="color" class="form-control-color" [(ngModel)]="dictionary.iconColor" (change)="saveInformation()"/>
         Cor do ícone
       </div>
     </div>

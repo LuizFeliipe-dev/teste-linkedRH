@@ -13,7 +13,7 @@ export class DictionaryTextsService {
     return this.httpService.get<DictionaryTextModel[]>(`${this.url}/dictionaryTexts`)
   }
 
-  post(payload: DictionaryTextModel): Observable<DictionaryTextModel>{
+    post(payload: DictionaryTextModel): Observable<DictionaryTextModel>{
     return this.httpService.post<DictionaryTextModel>(`${this.url}/dictionaryTexts`, payload)
   }
 

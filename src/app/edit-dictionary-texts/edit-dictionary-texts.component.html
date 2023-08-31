@@ -4,10 +4,20 @@
 <div class="body-content">
   <div class="header-body">
     <span>Palavra</span>
-    <app-button-add-texts (onRefresh)="handleRefresh()"></app-button-add-texts>
+    <app-button-add-texts
+      [id]="id"
+      (onRefresh)="handleRefresh()"
+    ></app-button-add-texts>
   </div>
   <app-edit-dictionary-texts-table
-    [texts]="texts$ | async"
+    #textsTable
+    [filteredTexts]="(texts$ | async)!"
+    [texts]="(texts$ | async)!"
     (onRefresh)="handleRefresh()"
   ></app-edit-dictionary-texts-table>
+  <div class="d-flex justify-content-center align-items-center">
+    <app-paginator
+      (sendLetter)="textsTable.filterTexts($event)"
+    ></app-paginator>
+  </div>
 </div>
