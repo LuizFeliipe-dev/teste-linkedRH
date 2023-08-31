@@ -3,6 +3,33 @@
     Palavra
 </div>
 <div class="modal-body">
+    <div class="col">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Palavra</label>
+                <input type="text" class="form-control" [(ngModel)]="rowData.text" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Definição</label>
+                <input
+                        type="text"
+                        class="form-control"
+                        [(ngModel)]="rowData.definition"
+                />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Definição Extra</label>
+                <textarea
+                        class="form-control"
+                        [(ngModel)]="rowData.extraDefinition"
+                ></textarea>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="modal-footer">
     <div class="d-flex justify-content-end">

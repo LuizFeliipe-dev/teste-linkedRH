@@ -1,8 +1,16 @@
 {
   "dictionaries": [
     {
+      "colorButton": "#6946b3",
+      "fontColorButton": "#ff80ff",
+      "colorTitle": "#ff0080",
+      "iconColor": "#00ff40",
       "name": "Aurelio",
-      "id": "d81b28d8-9304-426f-95ac-5a7fe9592e79"
+      "id": "3b771ba8-ed0b-4ea3-981c-d7d033b6328f"
+    },
+    {
+      "name": "Teste",
+      "id": "ccafea4c-80b6-4425-9fa2-706c0cf6ba16"
     }
   ],
   "dictionaryTexts": []

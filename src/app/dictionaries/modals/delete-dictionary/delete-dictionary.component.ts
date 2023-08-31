@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {DictionaryModel} from "../../../../models/dictionary.model";
 import {BsModalRef} from "ngx-bootstrap/modal";
 import {DictionariesService} from "../../../../services/dictionaries/dictionaries.service";
@@ -10,6 +10,8 @@ import {DictionariesService} from "../../../../services/dictionaries/dictionarie
   providers: [DictionariesService]
 })
 export class DeleteDictionaryComponent implements OnInit {
+  @Output() modalClosed = new EventEmitter<void>();
+
   rowData: DictionaryModel;
 
   constructor(
@@ -21,6 +23,7 @@ export class DeleteDictionaryComponent implements OnInit {
 
   onDelete() {
     this.dictionaryService.delete(this.rowData.id).subscribe(() => {
+      this.modalClosed.emit()
       this.modalRef.hide()
     })
   }

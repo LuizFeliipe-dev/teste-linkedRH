@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { DictionariesService } from '../../../../services/dictionaries/dictionaries.service';
 import { DictionaryModel } from '../../../../models/dictionary.model';
@@ -11,6 +11,8 @@ import { v4 as uuidv4 } from 'uuid';
   providers: [DictionariesService],
 })
 export class CreateDictionaryComponent implements OnInit {
+  @Output() modalClosed = new EventEmitter<void>();
+
   dictionary: DictionaryModel = new DictionaryModel();
 
   constructor(
@@ -27,6 +29,7 @@ export class CreateDictionaryComponent implements OnInit {
     }
 
     this.dictionaryService.post(newDictionary).subscribe(() => {
+      this.modalClosed.emit()
       this.modalRef.hide();
     });
   }

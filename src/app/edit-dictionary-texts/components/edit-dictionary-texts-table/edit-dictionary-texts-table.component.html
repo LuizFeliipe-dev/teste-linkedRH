@@ -1,1 +1,16 @@
-<p>edit-dictionary-table works!</p>
+<table>
+  <tr>
+    <th>Descrição</th>
+    <th>Editar</th>
+    <th>Excluir</th>
+  </tr>
+  <tr *ngFor="let text of texts">
+    <td style="width: 50em">{{ text.text }}</td>
+    <td>
+      <span class="material-icons is-button" (click)="openEditModal(text)">settings</span>
+    </td>
+    <td>
+      <span class="material-icons is-button"(click)="openDeleteModal(text)" >delete</span>
+    </td>
+  </tr>
+</table>

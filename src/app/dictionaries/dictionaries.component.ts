@@ -22,4 +22,8 @@ export class DictionariesComponent implements OnInit{
   loadDictionaries(){
     this.dictionaries$ = this.dictionariesService.list()
   }
+
+  handleRefresh(){
+    this.loadDictionaries()
+  }
 }

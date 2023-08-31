@@ -1,12 +1,43 @@
 <div class="modal-header">
-    <span class="material-icons">pen</span>
+  <div class="add-texts-header">
+    <span class="material-icons">add</span>
     Palavra
+  </div>
 </div>
 <div class="modal-body">
+  <div class="col">
+    <div class="row">
+      <div class="col-md-12">
+        <label>Palavra</label>
+        <input type="text" class="form-control" [(ngModel)]="text.text" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label>Definição</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="text.definition"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label>Definição Extra</label>
+        <textarea
+          class="form-control"
+          [(ngModel)]="text.extraDefinition"
+        ></textarea>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="modal-footer">
-    <div class="d-flex justify-content-end">
-        <button class="btn btn-default mr-2" (click)="modalRef.hide()">Cancelar</button>
-        <button class="btn btn-primary" (click)="onCreate()">Salvar</button>
-    </div>
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-default mr-2" (click)="modalRef.hide()">
+      Cancelar
+    </button>
+    <button class="btn btn-primary" (click)="onCreate()">Salvar</button>
+  </div>
 </div>

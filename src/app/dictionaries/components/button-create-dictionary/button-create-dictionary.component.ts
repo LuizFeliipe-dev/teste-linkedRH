@@ -9,7 +9,7 @@ import {CreateDictionaryComponent} from "../../modals/create-dictionary/create-d
   providers: []
 })
 export class ButtonCreateDictionaryComponent {
-  @Output() refresh = new EventEmitter<void>();
+  @Output() onRefresh = new EventEmitter<void>();
 
   modalRef?: BsModalRef;
 
@@ -17,5 +17,9 @@ export class ButtonCreateDictionaryComponent {
 
   openModal() {
     this.modalRef = this.modalService.show(CreateDictionaryComponent);
+
+    this.modalRef.content.modalClosed.subscribe(() => {
+      this.onRefresh.emit()
+    });
   }
 }

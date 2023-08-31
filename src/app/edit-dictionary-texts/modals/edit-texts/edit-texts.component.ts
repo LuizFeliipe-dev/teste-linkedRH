@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import {DictionaryTextModel} from "../../../../models/dictionaryText.mode";
 import {DictionaryTextsService} from "../../../../services/dictionary-texts/dictionary-texts.service";
@@ -10,6 +10,8 @@ import {DictionaryTextsService} from "../../../../services/dictionary-texts/dict
   providers: [DictionaryTextsService],
 })
 export class EditTextsComponent implements OnInit {
+  @Output() modalClosed = new EventEmitter<void>();
+
   rowData: DictionaryTextModel
 
   constructor(
@@ -21,6 +23,7 @@ export class EditTextsComponent implements OnInit {
 
   onUpdate() {
     this.dictionaryTextService.put(this.rowData.id, this.rowData).subscribe(() => {
+      this.modalClosed.emit()
       this.modalRef.hide();
     });
   }

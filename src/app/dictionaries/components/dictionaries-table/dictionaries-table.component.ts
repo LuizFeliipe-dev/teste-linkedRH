@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {DictionaryModel} from "../../../../models/dictionary.model";
-import {BsModalService} from "ngx-bootstrap/modal";
+import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 import {DeleteDictionaryComponent} from "../../modals/delete-dictionary/delete-dictionary.component";
 import {Router} from "@angular/router";
 import {EditDictionaryComponent} from "../../modals/edit-dictionary/edit-dictionary.component";
@@ -12,6 +12,10 @@ import {EditDictionaryComponent} from "../../modals/edit-dictionary/edit-diction
 })
 export class DictionariesTableComponent implements OnInit{
   @Input() dictionaries: DictionaryModel[] | null
+
+  @Output() onRefresh = new EventEmitter<void>();
+
+  modalRef?: BsModalRef;
 
   constructor(private modalService: BsModalService, private router: Router) {
   }
@@ -28,7 +32,10 @@ export class DictionariesTableComponent implements OnInit{
       rowData: event
     }
 
-    this.modalService.show(EditDictionaryComponent, { initialState: initalState })
+    this.modalRef = this.modalService.show(EditDictionaryComponent, { initialState: initalState })
+    this.modalRef.content.modalClosed.subscribe(() => {
+      this.onRefresh.emit()
+    });
   }
 
   goToEditTexts(event: DictionaryModel){
@@ -40,6 +47,9 @@ export class DictionariesTableComponent implements OnInit{
       rowData: event
     }
 
-    this.modalService.show(DeleteDictionaryComponent, { initialState: initalState })
+    this.modalRef = this.modalService.show(DeleteDictionaryComponent, { initialState: initalState })
+    this.modalRef.content.modalClosed.subscribe(() => {
+      this.onRefresh.emit()
+    });
   }
 }

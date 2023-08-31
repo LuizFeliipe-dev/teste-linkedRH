@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <span class="material-icons">delete</span>
+    Palavra
+</div>
+<div class="modal-body">
+    Tem certeza que deseja deletar a palavra {{ rowData.text }}?
+</div>
+<div class="modal-footer">
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-default mr-2" (click)="modalRef.hide()">Cancelar</button>
+        <button class="btn btn-primary" (click)="onDelete()">Confirmar</button>
+    </div>
+</div>

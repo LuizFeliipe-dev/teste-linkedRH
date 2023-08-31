@@ -6,7 +6,7 @@ import { DictionaryTextsTableComponent } from './components/dictionary-texts-tab
 
 const dictionaryTextsRoutes: Route[] = [
   {
-    path: 'text/:id',
+    path: '',
     component: TextsComponent,
   },
 ];

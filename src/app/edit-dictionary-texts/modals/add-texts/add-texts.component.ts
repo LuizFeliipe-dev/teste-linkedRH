@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { DictionaryTextModel } from '../../../../models/dictionaryText.mode';
-import {DictionaryTextsService} from "../../../../services/dictionary-texts/dictionary-texts.service";
+import { DictionaryTextsService } from '../../../../services/dictionary-texts/dictionary-texts.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-add-texts',
@@ -10,18 +11,28 @@ import {DictionaryTextsService} from "../../../../services/dictionary-texts/dict
   providers: [DictionaryTextsService],
 })
 export class AddTextsComponent implements OnInit {
-  texts: DictionaryTextModel = new DictionaryTextModel();
+  @Output() modalClosed = new EventEmitter<void>();
+
+  text: DictionaryTextModel = new DictionaryTextModel();
+
+  dictionaryId: number | string;
 
   constructor(
     public modalRef: BsModalRef,
     private dictionaryTextService: DictionaryTextsService
-
   ) {}
 
   ngOnInit() {}
 
   onCreate() {
-    this.dictionaryTextService.post(this.texts).subscribe(() => {
+    const newText = {
+      ...this.text,
+      id: uuidv4(),
+      dictionaryId: this.dictionaryId
+    };
+
+    this.dictionaryTextService.post(newText).subscribe(() => {
+      this.modalClosed.emit();
       this.modalRef.hide();
     });
   }

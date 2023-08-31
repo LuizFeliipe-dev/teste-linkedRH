@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import {AddTextsComponent} from "../../modals/add-texts/add-texts.component";
 
@@ -8,7 +8,9 @@ import {AddTextsComponent} from "../../modals/add-texts/add-texts.component";
   styleUrls: ['./button-add-texts.component.scss'],
 })
 export class ButtonAddTextsComponent implements OnInit {
-  @Output() refresh = new EventEmitter<void>();
+  @Output() onRefresh = new EventEmitter<void>();
+
+  @Input() id: number | string
 
   modalRef?: BsModalRef;
 
@@ -17,6 +19,14 @@ export class ButtonAddTextsComponent implements OnInit {
   ngOnInit() {}
 
   openModal() {
-    this.modalRef = this.modalService.show(AddTextsComponent);
+    const initialState = {
+      dictionaryId: this.id
+    }
+
+    this.modalRef = this.modalService.show(AddTextsComponent, { initialState });
+
+    this.modalRef.content.modalClosed.subscribe(() => {
+      this.onRefresh.emit()
+    });
   }
 }
