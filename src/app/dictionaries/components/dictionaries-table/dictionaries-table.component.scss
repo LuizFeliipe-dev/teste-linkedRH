@@ -1,3 +1,5 @@
+@import "node_modules/material-icons/iconfont/material-icons.css";
+
 table {
   width: 100%;
   margin: 1rem 0;
@@ -20,4 +22,8 @@ table {
       border-collapse: collapse;
     }
   }
+}
+
+.is-button{
+  cursor: pointer;
 }

@@ -5,8 +5,9 @@ import { DictionariesTableComponent } from './components/dictionaries-table/dict
 import { Route, RouterModule } from '@angular/router';
 import { ButtonCreateDictionaryComponent } from './components/button-create-dictionary/button-create-dictionary.component';
 import { CreateDictionaryComponent } from './modals/create-dictionary/create-dictionary.component';
-import { EditDictionaryComponent } from './modals/edit-dictionary/edit-dictionary.component';
+import { EditDictionaryComponent } from '../edit-dictionary/edit-dictionary.component';
 import { DeleteDictionaryComponent } from './modals/delete-dictionary/delete-dictionary.component';
+import {FormsModule} from "@angular/forms";
 
 const dictionariesRoutes: Route[] = [
   {
@@ -27,6 +28,7 @@ const dictionariesRoutes: Route[] = [
   imports: [
     CommonModule,
     RouterModule.forChild(dictionariesRoutes),
+      FormsModule
   ],
   providers: [],
 })

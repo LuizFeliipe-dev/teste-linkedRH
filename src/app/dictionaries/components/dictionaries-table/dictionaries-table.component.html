@@ -1,8 +1,22 @@
 <table>
-    <tr *ngFor="let dictionary of dictionaries">
-        <td>{{ dictionary.name }}</td>
-        <td><span class="material-icons"></span></td>
-        <td><span class="material-icons"></span></td>
-        <td><span class="material-icons"></span></td>
-    </tr>
+  <tr>
+    <th>Nome</th>
+    <th>Visualizar</th>
+    <th></th>
+    <th>Editar</th>
+    <th>Excluir</th>
+  </tr>
+  <tr *ngFor="let dictionary of dictionaries">
+    <td style="width: 50em">{{ dictionary.name }}</td>
+    <td class="column-button">
+      <span class="material-icons is-button" (click)="goToVisualizationDictionary(dictionary)">search</span>
+    </td>
+    <td><span class="is-button">abc</span></td>
+    <td>
+      <span class="material-icons is-button" (click)="openEditModal(dictionary)">settings</span>
+    </td>
+    <td>
+      <span class="material-icons is-button" (click)="openDeleteModal(dictionary)">delete</span>
+    </td>
+  </tr>
 </table>

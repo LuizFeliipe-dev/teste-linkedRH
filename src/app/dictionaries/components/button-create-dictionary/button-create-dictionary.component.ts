@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Output, TemplateRef} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
+import {CreateDictionaryComponent} from "../../modals/create-dictionary/create-dictionary.component";
 
 @Component({
   selector: 'app-button-create-dictionary',
@@ -11,10 +12,10 @@ export class ButtonCreateDictionaryComponent {
   @Output() refresh = new EventEmitter<void>();
 
   modalRef?: BsModalRef;
+
   constructor(private modalService: BsModalService) {}
 
-
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+  openModal() {
+    this.modalRef = this.modalService.show(CreateDictionaryComponent);
   }
 }

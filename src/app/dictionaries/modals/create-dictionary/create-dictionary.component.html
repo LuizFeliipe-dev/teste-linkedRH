@@ -1,11 +1,48 @@
-<!--<nb-card>-->
-<!--    <nb-card-header>-->
-<!--        <span class="material-icons">pen</span> Dicionário-->
-<!--    </nb-card-header>-->
-<!--    <nb-card-body></nb-card-body>-->
-<!--    <nb-card-footer>-->
-<!--        <div class="d-flex justify-content-end">-->
-<!--            <button class="btn btn-secondary">Salvar</button>-->
-<!--        </div>-->
-<!--    </nb-card-footer>-->
-<!--</nb-card>-->
+<div class="modal-header">
+  <div class="header-create-content">
+    <div class="header-create-text">
+      <!--  <span class="material-icons">pen</span> -->
+      Dicionário
+    </div>
+    <span class="material-icons" >close</span>
+  </div>
+</div>
+<div class="modal-body">
+  <div class="col">
+    <div class="row">
+      <div class="col-md-12">
+        <label>Título</label>
+        <input type="text" class="form-control"  [(ngModel)]="dictionary.name" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <input type="checkbox" [(ngModel)]="dictionary.colorButton"/>
+        Cor de fundo do botão
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <input type="checkbox" />
+        Cor da fonte do botão
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <input type="checkbox" />
+        Cor da fonte para títulos
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <input type="checkbox" />
+        Cor do ícone
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-primary" (click)="onCreate()">Salvar</button>
+  </div>
+</div>
